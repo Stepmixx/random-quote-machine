@@ -1,7 +1,6 @@
 import React from "react";
 import "./QuoteContainer.css";
 import hexToHsl from "hex-to-hsl";
-import { useState } from "react";
 
 export const changeContainerColorWhenBgIsLight = (color) => {
   const hslColor = hexToHsl(color);
@@ -9,7 +8,6 @@ export const changeContainerColorWhenBgIsLight = (color) => {
 };
 
 const QuoteContainer = ({ quote, author, click, color }) => {
-  const [state, setState] = useState(true);
   const tweetUrl =
     "https://twitter.com/intent/tweet?text=" +
     '"' +
