@@ -23,7 +23,7 @@ const QuoteContainer = ({ quote, author, click, color }) => {
     >
       <div className="quote-container">
         <blockquote id="text">
-          <i class="fas fa-quote-left"></i>
+          <i className="fas fa-quote-left"></i>
           {quote}
         </blockquote>
         <cite id="author">- {author}</cite>
