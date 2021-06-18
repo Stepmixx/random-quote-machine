@@ -21,16 +21,18 @@ const QuoteContainer = ({ quote, author, click, color }) => {
     <div
       style={{ backgroundColor: changeContainerColorWhenBgIsLight(color) }}
       className="container my-4 col-8 col-md-6 col-lg-5 m-10 d-flex flex-column"
+      id="quote-box"
     >
       <div className="quote-container">
-        <blockquote>
+        <blockquote id="text">
           <i class="fas fa-quote-left"></i>
           {quote}
         </blockquote>
-        <cite>- {author}</cite>
+        <cite id="author">- {author}</cite>
       </div>
       <div className="btn-container">
         <a
+          id="tweet-quote"
           style={{
             backgroundColor: color,
             color: changeContainerColorWhenBgIsLight(color),
@@ -42,6 +44,7 @@ const QuoteContainer = ({ quote, author, click, color }) => {
           <i className="fab fa-twitter"></i>
         </a>
         <button
+          id="new-quote"
           style={{
             backgroundColor: color,
             color: changeContainerColorWhenBgIsLight(color),

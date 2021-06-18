@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Lobster&display=swap");
+
 .container {
   border-radius: 10px;
 }
@@ -40,6 +42,7 @@ button:hover {
 }
 
 blockquote {
+  font-family: "Comfortaa", cursive;
   font-size: 26px;
   margin-bottom: 20px;
   text-align: center;
@@ -52,6 +55,7 @@ blockquote i {
 }
 
 cite {
+  font-family: "Comfortaa", cursive;
   display: block;
   font-size: 20px;
   text-align: right;
