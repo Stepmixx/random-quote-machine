@@ -47,10 +47,7 @@ const QuoteContainer = ({ quote, author, click, color }) => {
             backgroundColor: color,
             color: changeContainerColorWhenBgIsLight(color),
           }}
-          onClick={() => {
-            click();
-            setState(!state);
-          }}
+          onClick={click}
         >
           New quote
         </button>
