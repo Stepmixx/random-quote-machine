@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export const changeContainerColorWhenBgIsLight = (color) => {
   const hslColor = hexToHsl(color);
-  return hslColor[2] > 80 ? "#666666" : "#ffffff";
+  return hslColor[2] > 85 ? "#666666" : "#ffffff";
 };
 
 const QuoteContainer = ({ quote, author, click, color }) => {
