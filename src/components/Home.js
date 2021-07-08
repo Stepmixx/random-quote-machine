@@ -36,7 +36,10 @@ const Home = () => {
 
   const quote = quotesArr[index];
 
-  const color = "#" + colorsArr[index].hex;
+  const setColor = (obj) =>
+    obj.hex.length > 0 ? "#" + obj.hex : "#" + colorsArr[0].hex;
+
+  const color = setColor(colorsArr[index]);
 
   const bgColor = {
     backgroundColor: color,
@@ -52,7 +55,7 @@ const Home = () => {
         author={quote.author}
         quote={quote.text}
         click={() => setIndex(getRandomNumber())}
-        color={color}
+        hexColor={color}
       />
       <p
         style={{

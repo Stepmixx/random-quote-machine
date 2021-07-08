@@ -4,10 +4,12 @@ import hexToHsl from "hex-to-hsl";
 
 export const changeContainerColorWhenBgIsLight = (color) => {
   const hslColor = hexToHsl(color);
-  return hslColor[2] > 85 ? "#666666" : "#ffffff";
+  console.log(hslColor);
+  console.log(color);
+  return hslColor[2] >= 85 ? "#333333" : "#ffffff";
 };
 
-const QuoteContainer = ({ quote, author, click, color }) => {
+const QuoteContainer = ({ quote, author, click, hexColor }) => {
   const tweetUrl =
     "https://twitter.com/intent/tweet?text=" +
     '"' +
@@ -17,7 +19,7 @@ const QuoteContainer = ({ quote, author, click, color }) => {
     author;
   return (
     <div
-      style={{ backgroundColor: changeContainerColorWhenBgIsLight(color) }}
+      style={{ backgroundColor: changeContainerColorWhenBgIsLight(hexColor) }}
       className="container my-4 col-8 col-md-6 col-lg-5 m-10 d-flex flex-column"
       id="quote-box"
     >
@@ -32,8 +34,8 @@ const QuoteContainer = ({ quote, author, click, color }) => {
         <a
           id="tweet-quote"
           style={{
-            backgroundColor: color,
-            color: changeContainerColorWhenBgIsLight(color),
+            backgroundColor: hexColor,
+            color: changeContainerColorWhenBgIsLight(hexColor),
           }}
           href={tweetUrl}
           target="_blank"
@@ -44,8 +46,8 @@ const QuoteContainer = ({ quote, author, click, color }) => {
         <button
           id="new-quote"
           style={{
-            backgroundColor: color,
-            color: changeContainerColorWhenBgIsLight(color),
+            backgroundColor: hexColor,
+            color: changeContainerColorWhenBgIsLight(hexColor),
           }}
           onClick={click}
         >
