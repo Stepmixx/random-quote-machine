@@ -13,7 +13,6 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 40px;
 }
 
 button {
@@ -65,22 +64,12 @@ cite {
   margin: 40px;
 }
 
-.fade-enter {
-  opacity: 0;
-}
-
-.fade-enter-active {
-  opacity: 1;
-  transition: opacity 1000ms ease-out;
-}
-
-.fade-exit {
-  opacity: 1;
-}
-
-.fade-exit-active {
-  opacity: 0;
-  transition: opacity 1000ms ease-out;
+.social-media {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: min(45%, 100px);
+  margin-left: 20px;
 }
 
 @media screen and (max-width: 800px) {
@@ -92,7 +81,7 @@ cite {
     font-size: 16px;
   }
 
-  a {
+  .social-media {
     font-size: 14px;
     margin-left: 0px;
   }
@@ -100,9 +89,12 @@ cite {
     font-size: 14px;
     margin-right: 0px;
   }
+  #facebook-quote {
+    font-size: 16px;
+  }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   blockquote {
     font-size: 18px;
   }

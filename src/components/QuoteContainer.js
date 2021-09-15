@@ -4,14 +4,20 @@ import hexToHsl from "hex-to-hsl";
 
 export const changeContainerColorWhenBgIsLight = (color) => {
   const hslColor = hexToHsl(color);
-  console.log(hslColor);
-  console.log(color);
   return hslColor[2] >= 85 ? "#333333" : "#ffffff";
 };
 
-const QuoteContainer = ({ quote, author, click, hexColor }) => {
+const QuoteContainer = ({ quote, author, updateQuote, hexColor }) => {
   const tweetUrl =
     "https://twitter.com/intent/tweet?text=" +
+    '"' +
+    quote +
+    '"' +
+    " -" +
+    author;
+
+  const facebookUrl =
+    "https://www.facebook.com/dialog/feed?&app_id=276230984100277&link=https://random-quote-machine-stephan.netlify.app/&display=popup&quote=" +
     '"' +
     quote +
     '"' +
@@ -31,25 +37,40 @@ const QuoteContainer = ({ quote, author, click, hexColor }) => {
         <cite id="author">- {author}</cite>
       </div>
       <div className="btn-container">
-        <a
-          id="tweet-quote"
-          style={{
-            backgroundColor: hexColor,
-            color: changeContainerColorWhenBgIsLight(hexColor),
-          }}
-          href={tweetUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-twitter"></i>
-        </a>
+        <div className="social-media">
+          <a
+            id="facebook-quote"
+            style={{
+              backgroundColor: hexColor,
+              color: changeContainerColorWhenBgIsLight(hexColor),
+            }}
+            href={facebookUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-facebook-f"></i>
+          </a>
+          <a
+            id="tweet-quote"
+            style={{
+              backgroundColor: hexColor,
+              color: changeContainerColorWhenBgIsLight(hexColor),
+            }}
+            href={tweetUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-twitter"></i>
+          </a>
+        </div>
+
         <button
           id="new-quote"
           style={{
             backgroundColor: hexColor,
             color: changeContainerColorWhenBgIsLight(hexColor),
           }}
-          onClick={click}
+          onClick={updateQuote}
         >
           New quote
         </button>
